@@ -1,7 +1,7 @@
 schema:
   - https://graphql.datocms.com:
       headers:
-        Authorization: 'Bearer ${DATO_CMS_API_TOKEN}'
+        Authorization: 'Bearer ${DATO_CMS_TOKEN}'
 documents: './src/graphql/**/*.graphql'
 generates:
   ./src/graphql/generated.ts:

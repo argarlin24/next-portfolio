@@ -7,6 +7,6 @@ export function request<TDocument = any>(
   variables?: Variables,
 ) {
   return graphqlRequest<TDocument, Variables>('https://graphql.datocms.com/', document, variables, {
-    Authorization: process.env.DATO_CMS_API_TOKEN as string,
+    Authorization: process.env.DATO_CMS_TOKEN as string,
   });
 }
