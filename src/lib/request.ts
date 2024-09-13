@@ -1,11 +1,12 @@
-import { request as graphqlRequest, Variables } from "graphql-request"
-import { RequestDocument } from "graphql-request"
-import { TypedDocumentNode } from "@graphql-typed-document-node/core"
+import { TypedDocumentNode } from '@graphql-typed-document-node/core';
+import { request as graphqlRequest, Variables } from 'graphql-request';
+import { RequestDocument } from 'graphql-request';
+
 export function request<TDocument = any>(
   document: RequestDocument | TypedDocumentNode<TDocument, Variables>,
   variables?: Variables,
 ) {
-  return graphqlRequest<TDocument, Variables>("https://graphql.datocms.com/", document, variables, {
-    Authorization: "d34fe2e4504ceca39b3c8339b2177f",
-  })
+  return graphqlRequest<TDocument, Variables>('https://graphql.datocms.com/', document, variables, {
+    Authorization: process.env.DATO_CMS_API_TOKEN as string,
+  });
 }
