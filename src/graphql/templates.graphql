@@ -1,0 +1,22 @@
+query allTemplatePagesSlugs {
+  allTemplatePages {
+    internalName
+    slug
+  }
+}
+
+query templatePage($slug: String!) {
+  templatePage(filter: { slug: { eq: $slug } }) {
+    id
+    slug
+    components {
+      ... on ComponentHeroRecord {
+        _modelApiKey
+        id
+        headingKicker
+        heading
+        description
+      }
+    }
+  }
+}
