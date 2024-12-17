@@ -15,10 +15,13 @@ const Desktop: FC<DesktopProps> = ({ navItems }) => (
       </a>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
-          {navItems.map(items => (
-            <li>
-              <a className="text-xl font-bold text-slate-900" href={items?.url || '#'}>
-                {items?.label}
+          {navItems.map(item => (
+            <li key={item?.label}>
+              <a
+                className="text-xl font-bold text-slate-900"
+                href={item?.url || '#'}
+              >
+                {item?.label}
               </a>
             </li>
           ))}

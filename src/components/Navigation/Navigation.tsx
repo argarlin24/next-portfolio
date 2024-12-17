@@ -9,7 +9,7 @@ interface NavigationProps {
   component: ComponentNavRecord;
 }
 
-export const Navigation: FC<NavigationProps> = ({ component }) => {
+const Navigation: FC<NavigationProps> = ({ component }) => {
   const { navItems } = component;
 
   return (
@@ -19,3 +19,5 @@ export const Navigation: FC<NavigationProps> = ({ component }) => {
     </div>
   );
 };
+
+export default Navigation;

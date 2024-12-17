@@ -347,84 +347,6 @@ export type ComponentNavRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
-export type ComponentProjectSwitcherModelFilter = {
-  AND?: InputMaybe<Array<InputMaybe<ComponentProjectSwitcherModelFilter>>>;
-  OR?: InputMaybe<Array<InputMaybe<ComponentProjectSwitcherModelFilter>>>;
-  _createdAt?: InputMaybe<CreatedAtFilter>;
-  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
-  _isValid?: InputMaybe<BooleanFilter>;
-  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _publishedAt?: InputMaybe<PublishedAtFilter>;
-  _status?: InputMaybe<StatusFilter>;
-  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
-  _updatedAt?: InputMaybe<UpdatedAtFilter>;
-  description?: InputMaybe<TextFilter>;
-  heading?: InputMaybe<StringFilter>;
-  id?: InputMaybe<ItemIdFilter>;
-  internalName?: InputMaybe<StringFilter>;
-  projects?: InputMaybe<LinksFilter>;
-};
-
-export enum ComponentProjectSwitcherModelOrderBy {
-  CreatedAtAsc = '_createdAt_ASC',
-  CreatedAtDesc = '_createdAt_DESC',
-  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
-  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
-  IsValidAsc = '_isValid_ASC',
-  IsValidDesc = '_isValid_DESC',
-  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
-  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
-  PublishedAtAsc = '_publishedAt_ASC',
-  PublishedAtDesc = '_publishedAt_DESC',
-  StatusAsc = '_status_ASC',
-  StatusDesc = '_status_DESC',
-  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
-  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
-  UpdatedAtAsc = '_updatedAt_ASC',
-  UpdatedAtDesc = '_updatedAt_DESC',
-  HeadingAsc = 'heading_ASC',
-  HeadingDesc = 'heading_DESC',
-  IdAsc = 'id_ASC',
-  IdDesc = 'id_DESC',
-  InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC'
-}
-
-/** Record of type Component: Project Switcher (component_project_switcher) */
-export type ComponentProjectSwitcherRecord = RecordInterface & {
-  __typename?: 'ComponentProjectSwitcherRecord';
-  _createdAt: Scalars['DateTime']['output'];
-  /** Editing URL */
-  _editingUrl?: Maybe<Scalars['String']['output']>;
-  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
-  _isValid: Scalars['BooleanType']['output'];
-  _modelApiKey: Scalars['String']['output'];
-  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
-  /** Generates SEO and Social card meta tags to be used in your frontend */
-  _seoMetaTags: Array<Tag>;
-  _status: ItemStatus;
-  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
-  _updatedAt: Scalars['DateTime']['output'];
-  description?: Maybe<Scalars['String']['output']>;
-  heading?: Maybe<Scalars['String']['output']>;
-  id: Scalars['ItemId']['output'];
-  internalName?: Maybe<Scalars['String']['output']>;
-  projects: Array<TemplateProjectRecord>;
-};
-
-
-/** Record of type Component: Project Switcher (component_project_switcher) */
-export type ComponentProjectSwitcherRecord_SeoMetaTagsArgs = {
-  locale?: InputMaybe<SiteLocale>;
-};
-
-
-/** Record of type Component: Project Switcher (component_project_switcher) */
-export type ComponentProjectSwitcherRecordDescriptionArgs = {
-  markdown?: InputMaybe<Scalars['Boolean']['input']>;
-};
-
 export type ComponentSingleInstanceModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<ComponentSingleInstanceModelFilter>>>;
   OR?: InputMaybe<Array<InputMaybe<ComponentSingleInstanceModelFilter>>>;
@@ -491,6 +413,84 @@ export type ComponentSingleInstanceRecord = RecordInterface & {
 /** Record of type Component: Single Instance (component_single_instance) */
 export type ComponentSingleInstanceRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
+};
+
+export type ComponentSwitcherModelFilter = {
+  AND?: InputMaybe<Array<InputMaybe<ComponentSwitcherModelFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<ComponentSwitcherModelFilter>>>;
+  _createdAt?: InputMaybe<CreatedAtFilter>;
+  _firstPublishedAt?: InputMaybe<PublishedAtFilter>;
+  _isValid?: InputMaybe<BooleanFilter>;
+  _publicationScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _publishedAt?: InputMaybe<PublishedAtFilter>;
+  _status?: InputMaybe<StatusFilter>;
+  _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
+  _updatedAt?: InputMaybe<UpdatedAtFilter>;
+  description?: InputMaybe<TextFilter>;
+  heading?: InputMaybe<StringFilter>;
+  id?: InputMaybe<ItemIdFilter>;
+  internalName?: InputMaybe<StringFilter>;
+  projects?: InputMaybe<LinksFilter>;
+};
+
+export enum ComponentSwitcherModelOrderBy {
+  CreatedAtAsc = '_createdAt_ASC',
+  CreatedAtDesc = '_createdAt_DESC',
+  FirstPublishedAtAsc = '_firstPublishedAt_ASC',
+  FirstPublishedAtDesc = '_firstPublishedAt_DESC',
+  IsValidAsc = '_isValid_ASC',
+  IsValidDesc = '_isValid_DESC',
+  PublicationScheduledAtAsc = '_publicationScheduledAt_ASC',
+  PublicationScheduledAtDesc = '_publicationScheduledAt_DESC',
+  PublishedAtAsc = '_publishedAt_ASC',
+  PublishedAtDesc = '_publishedAt_DESC',
+  StatusAsc = '_status_ASC',
+  StatusDesc = '_status_DESC',
+  UnpublishingScheduledAtAsc = '_unpublishingScheduledAt_ASC',
+  UnpublishingScheduledAtDesc = '_unpublishingScheduledAt_DESC',
+  UpdatedAtAsc = '_updatedAt_ASC',
+  UpdatedAtDesc = '_updatedAt_DESC',
+  HeadingAsc = 'heading_ASC',
+  HeadingDesc = 'heading_DESC',
+  IdAsc = 'id_ASC',
+  IdDesc = 'id_DESC',
+  InternalNameAsc = 'internalName_ASC',
+  InternalNameDesc = 'internalName_DESC'
+}
+
+/** Record of type Component: Project Switcher (component_switcher) */
+export type ComponentSwitcherRecord = RecordInterface & {
+  __typename?: 'ComponentSwitcherRecord';
+  _createdAt: Scalars['DateTime']['output'];
+  /** Editing URL */
+  _editingUrl?: Maybe<Scalars['String']['output']>;
+  _firstPublishedAt?: Maybe<Scalars['DateTime']['output']>;
+  _isValid: Scalars['BooleanType']['output'];
+  _modelApiKey: Scalars['String']['output'];
+  _publicationScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _publishedAt?: Maybe<Scalars['DateTime']['output']>;
+  /** Generates SEO and Social card meta tags to be used in your frontend */
+  _seoMetaTags: Array<Tag>;
+  _status: ItemStatus;
+  _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
+  _updatedAt: Scalars['DateTime']['output'];
+  description?: Maybe<Scalars['String']['output']>;
+  heading?: Maybe<Scalars['String']['output']>;
+  id: Scalars['ItemId']['output'];
+  internalName?: Maybe<Scalars['String']['output']>;
+  projects: Array<TemplateProjectRecord>;
+};
+
+
+/** Record of type Component: Project Switcher (component_switcher) */
+export type ComponentSwitcherRecord_SeoMetaTagsArgs = {
+  locale?: InputMaybe<SiteLocale>;
+};
+
+
+/** Record of type Component: Project Switcher (component_switcher) */
+export type ComponentSwitcherRecordDescriptionArgs = {
+  markdown?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
 /** Specifies how to filter by creation datetime */
@@ -2413,9 +2413,9 @@ export type Query = {
   /** Returns meta information regarding a record collection */
   _allComponentNavsMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
-  _allComponentProjectSwitchersMeta: CollectionMetadata;
-  /** Returns meta information regarding a record collection */
   _allComponentSingleInstancesMeta: CollectionMetadata;
+  /** Returns meta information regarding a record collection */
+  _allComponentSwitchersMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
   _allTaxonomyTagsMeta: CollectionMetadata;
   /** Returns meta information regarding a record collection */
@@ -2435,9 +2435,9 @@ export type Query = {
   /** Returns a collection of records */
   allComponentNavs: Array<ComponentNavRecord>;
   /** Returns a collection of records */
-  allComponentProjectSwitchers: Array<ComponentProjectSwitcherRecord>;
-  /** Returns a collection of records */
   allComponentSingleInstances: Array<ComponentSingleInstanceRecord>;
+  /** Returns a collection of records */
+  allComponentSwitchers: Array<ComponentSwitcherRecord>;
   /** Returns a collection of records */
   allTaxonomyTags: Array<TaxonomyTagRecord>;
   /** Returns a collection of records */
@@ -2455,9 +2455,9 @@ export type Query = {
   /** Returns a specific record */
   componentNavItem?: Maybe<ComponentNavItemRecord>;
   /** Returns a specific record */
-  componentProjectSwitcher?: Maybe<ComponentProjectSwitcherRecord>;
-  /** Returns a specific record */
   componentSingleInstance?: Maybe<ComponentSingleInstanceRecord>;
+  /** Returns a specific record */
+  componentSwitcher?: Maybe<ComponentSwitcherRecord>;
   /** Returns a specific record */
   taxonomyTag?: Maybe<TaxonomyTagRecord>;
   /** Returns a specific record */
@@ -2498,15 +2498,15 @@ export type Query_AllComponentNavsMetaArgs = {
 
 
 /** The query root for this schema */
-export type Query_AllComponentProjectSwitchersMetaArgs = {
-  filter?: InputMaybe<ComponentProjectSwitcherModelFilter>;
+export type Query_AllComponentSingleInstancesMetaArgs = {
+  filter?: InputMaybe<ComponentSingleInstanceModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
 
 /** The query root for this schema */
-export type Query_AllComponentSingleInstancesMetaArgs = {
-  filter?: InputMaybe<ComponentSingleInstanceModelFilter>;
+export type Query_AllComponentSwitchersMetaArgs = {
+  filter?: InputMaybe<ComponentSwitcherModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
 
@@ -2591,23 +2591,23 @@ export type QueryAllComponentNavsArgs = {
 
 
 /** The query root for this schema */
-export type QueryAllComponentProjectSwitchersArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ComponentProjectSwitcherModelFilter>;
-  first?: InputMaybe<Scalars['IntType']['input']>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<ComponentProjectSwitcherModelOrderBy>>>;
-  skip?: InputMaybe<Scalars['IntType']['input']>;
-};
-
-
-/** The query root for this schema */
 export type QueryAllComponentSingleInstancesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   filter?: InputMaybe<ComponentSingleInstanceModelFilter>;
   first?: InputMaybe<Scalars['IntType']['input']>;
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<ComponentSingleInstanceModelOrderBy>>>;
+  skip?: InputMaybe<Scalars['IntType']['input']>;
+};
+
+
+/** The query root for this schema */
+export type QueryAllComponentSwitchersArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ComponentSwitcherModelFilter>;
+  first?: InputMaybe<Scalars['IntType']['input']>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ComponentSwitcherModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
@@ -2693,20 +2693,20 @@ export type QueryComponentNavItemArgs = {
 
 
 /** The query root for this schema */
-export type QueryComponentProjectSwitcherArgs = {
-  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
-  filter?: InputMaybe<ComponentProjectSwitcherModelFilter>;
-  locale?: InputMaybe<SiteLocale>;
-  orderBy?: InputMaybe<Array<InputMaybe<ComponentProjectSwitcherModelOrderBy>>>;
-};
-
-
-/** The query root for this schema */
 export type QueryComponentSingleInstanceArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   filter?: InputMaybe<ComponentSingleInstanceModelFilter>;
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<ComponentSingleInstanceModelOrderBy>>>;
+};
+
+
+/** The query root for this schema */
+export type QueryComponentSwitcherArgs = {
+  fallbackLocales?: InputMaybe<Array<SiteLocale>>;
+  filter?: InputMaybe<ComponentSwitcherModelFilter>;
+  locale?: InputMaybe<SiteLocale>;
+  orderBy?: InputMaybe<Array<InputMaybe<ComponentSwitcherModelOrderBy>>>;
 };
 
 
@@ -2963,7 +2963,7 @@ export type TaxonomyTagRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
-export type TemplatePageModelComponentsField = ComponentHeroRecord | ComponentNavRecord | ComponentProjectSwitcherRecord | ComponentSingleInstanceRecord;
+export type TemplatePageModelComponentsField = ComponentHeroRecord | ComponentNavRecord | ComponentSingleInstanceRecord | ComponentSwitcherRecord;
 
 export type TemplatePageModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<TemplatePageModelFilter>>>;
@@ -3546,8 +3546,8 @@ export type TemplatePageQueryVariables = Exact<{
 }>;
 
 
-export type TemplatePageQuery = { __typename?: 'Query', templatePage?: { __typename?: 'TemplatePageRecord', id: string, slug?: string | null, components: Array<{ __typename?: 'ComponentHeroRecord', _modelApiKey: string, id: string, headingKicker?: string | null, heading?: string | null, description?: string | null, featuredImage?: { __typename?: 'FileField', alt?: string | null, url: string } | null } | { __typename?: 'ComponentNavRecord', _modelApiKey: string, navItems: Array<{ __typename?: 'ComponentNavItemRecord', id: string, label?: string | null, url?: string | null }> } | { __typename?: 'ComponentProjectSwitcherRecord' } | { __typename?: 'ComponentSingleInstanceRecord' }> } | null };
+export type TemplatePageQuery = { __typename?: 'Query', templatePage?: { __typename?: 'TemplatePageRecord', id: string, slug?: string | null, components: Array<{ __typename?: 'ComponentHeroRecord', _modelApiKey: string, id: string, headingKicker?: string | null, heading?: string | null, description?: string | null, featuredImage?: { __typename?: 'FileField', alt?: string | null, url: string } | null } | { __typename?: 'ComponentNavRecord', _modelApiKey: string, navItems: Array<{ __typename?: 'ComponentNavItemRecord', id: string, label?: string | null, url?: string | null }> } | { __typename?: 'ComponentSingleInstanceRecord' } | { __typename?: 'ComponentSwitcherRecord', _modelApiKey: string, id: string, heading?: string | null, description?: string | null, projects: Array<{ __typename?: 'TemplateProjectRecord', id: string, slug?: string | null, heading?: string | null, description?: string | null, projectUrl?: string | null, featuredImage?: { __typename?: 'FileField', alt?: string | null, url: string } | null, tags: Array<{ __typename?: 'TaxonomyTagRecord', title?: string | null }> }> }> } | null };
 
 
 export const AllTemplatePagesSlugsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"allTemplatePagesSlugs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allTemplatePages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"internalName"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]} as unknown as DocumentNode<AllTemplatePagesSlugsQuery, AllTemplatePagesSlugsQueryVariables>;
-export const TemplatePageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"templatePage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"templatePage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"components"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentNavRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"navItems"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"label"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentHeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"headingKicker"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"featuredImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<TemplatePageQuery, TemplatePageQueryVariables>;
+export const TemplatePageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"templatePage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"templatePage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"components"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentNavRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"navItems"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"label"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentHeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"headingKicker"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"featuredImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentSwitcherRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"projects"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"projectUrl"}},{"kind":"Field","name":{"kind":"Name","value":"featuredImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}},{"kind":"Field","name":{"kind":"Name","value":"tags"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"title"}}]}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<TemplatePageQuery, TemplatePageQueryVariables>;

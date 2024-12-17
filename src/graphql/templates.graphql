@@ -29,6 +29,26 @@ query templatePage($slug: String!) {
           url
         }
       }
+      ... on ComponentSwitcherRecord {
+        _modelApiKey
+        id
+        heading
+        description
+        projects {
+          id
+          slug
+          heading
+          description
+          projectUrl
+          featuredImage {
+            alt
+            url
+          }
+          tags {
+            title
+          }
+        }
+      }
     }
   }
 }
