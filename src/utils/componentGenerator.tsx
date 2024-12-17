@@ -19,7 +19,9 @@ const componentGenerator = (components: any[] | undefined) => {
       case 'component_single_instance':
         return <SingleInstance key={component?.id} component={component} />;
       default:
-        console.warn(`${component?.__modelApiKey} is incorrect or missing from componentGenerator`);
+        console.warn(
+          `${component?.__modelApiKey} is incorrect or missing from componentGenerator`,
+        );
 
         return null;
     }

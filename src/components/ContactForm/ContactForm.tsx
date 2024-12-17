@@ -2,7 +2,7 @@ import React from 'react';
 
 const ContactForm = () => {
   return (
-    <div className="bg-gradient-to-b from-slate-200">
+    <div id="contact" className="bg-gradient-to-b from-slate-200">
       <div className="flex flex-col gap-8 py-12 mx-auto md:py-16 xl:max-w-screen-xl xl:py-24">
         <h2 className="text-5xl font-bold text-center">Contact</h2>
         <form
