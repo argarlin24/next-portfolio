@@ -14,9 +14,18 @@ const Hero: FC<HeroProps> = ({ component }) => {
     <div className="hero py-20 bg-gradient-to-br from-slate-200 xl:h-dvh">
       <div className="hero-content flex flex-col lg:flex-row p-10 gap-10">
         <div className="max-w-xl gap-4 flex flex-col lg:max-w-2xl">
-          {headingKicker && <p className="text-2xl font-semibold text-accent">{headingKicker}</p>}
+          {headingKicker && (
+            <p className="text-2xl font-semibold text-accent">
+              {headingKicker}
+            </p>
+          )}
           {heading && <h1 className="text-6xl font-bold">{heading}</h1>}
-          {description && <p className="text-lg" dangerouslySetInnerHTML={{ __html: description }} />}
+          {description && (
+            <p
+              className="text-lg"
+              dangerouslySetInnerHTML={{ __html: description }}
+            />
+          )}
           <div className="flex flex-col gap-4 md:flex-row">
             <a className="btn btn-neutral rounded-lg text-lg" href="#projects">
               View Projects

@@ -2,6 +2,7 @@ import React from 'react';
 
 import Hero from '../components/Hero/Hero';
 import Navigation from '../components/Navigation/Navigation';
+import SingleInstance from '../components/SingleInstance/SingleInstance';
 import Switcher from '../components/Switcher/Switcher';
 
 const componentGenerator = (components: any[] | undefined) => {
@@ -15,6 +16,8 @@ const componentGenerator = (components: any[] | undefined) => {
         return <Hero key={component.id} component={component} />;
       case 'component_switcher':
         return <Switcher key={component?.id} component={component} />;
+      case 'component_single_instance':
+        return <SingleInstance key={component?.id} component={component} />;
       default:
         console.warn(`${component?.__modelApiKey} is incorrect or missing from componentGenerator`);
 

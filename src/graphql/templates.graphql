@@ -49,6 +49,10 @@ query templatePage($slug: String!) {
           }
         }
       }
+      ... on ComponentSingleInstanceRecord {
+        _modelApiKey
+        singleInstanceId
+      }
     }
   }
 }
