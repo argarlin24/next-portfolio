@@ -6,7 +6,7 @@ import Switcher from '../components/Switcher/Switcher';
 
 const componentGenerator = (components: any[] | undefined) => {
   if (!components || components.length === 0) return null;
-  console.log(components);
+
   return components?.map(component => {
     switch (component._modelApiKey) {
       case 'component_nav':

@@ -14,7 +14,7 @@ interface SwitcherProps {
 const Switcher: FC<SwitcherProps> = ({ component }) => {
   const { heading, description, projects } = component;
   const [activeSlide, setActiveSlide] = useState(0);
-  console.log(component);
+
   return (
     <div id="projects" className="flex py-12 mx-auto md:py-16 xl:max-w-screen-xl xl:py-24">
       <div className="flex flex-col gap-8 w-full mx-auto p-10">
@@ -26,16 +26,20 @@ const Switcher: FC<SwitcherProps> = ({ component }) => {
           <Controls projects={projects} activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
           <div>
             {projects?.map((project, idx) => (
-              <div className={`${activeSlide === idx ? 'flex' : 'hidden'}`}>
+              <div key={project?.id} className={`${activeSlide === idx ? 'flex' : 'hidden'}`}>
                 <div className="flex flex-col gap-12 w-full lg:flex-row">
                   <div className="flex flex-col gap-4">
                     {project?.heading && <p className="text-3xl font-bold">{project?.heading}</p>}
                     {project?.description && (
-                      <div dangerouslySetInnerHTML={{ __html: project?.description as TrustedHTML }} />
+                      <div
+                        dangerouslySetInnerHTML={{
+                          __html: project?.description as TrustedHTML,
+                        }}
+                      />
                     )}
                     <div className="flex flex-wrap gap-4">
                       {project?.tags?.map(tag => (
-                        <div className="badge badge-secondary badge-outline badge-lg">
+                        <div key={tag?.id} className="badge badge-secondary badge-outline badge-lg">
                           <p key={tag?.id}>{tag?.title}</p>
                         </div>
                       ))}

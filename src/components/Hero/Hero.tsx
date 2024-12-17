@@ -18,7 +18,9 @@ const Hero: FC<HeroProps> = ({ component }) => {
           {heading && <h1 className="text-6xl font-bold">{heading}</h1>}
           {description && <p className="text-lg" dangerouslySetInnerHTML={{ __html: description }} />}
           <div className="flex flex-col gap-4 md:flex-row">
-            <a className="btn btn-neutral rounded-lg text-lg">View Projects</a>
+            <a className="btn btn-neutral rounded-lg text-lg" href="#projects">
+              View Projects
+            </a>
           </div>
         </div>
         <div className="relative w-full bg-no-repeat bg-cover">
