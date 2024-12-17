@@ -1,5 +1,4 @@
 import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/core';
-
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
@@ -9,19 +8,19 @@ export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> =
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
-  ID: { input: string; output: string };
-  String: { input: string; output: string };
-  Boolean: { input: boolean; output: boolean };
-  Int: { input: number; output: number };
-  Float: { input: number; output: number };
-  BooleanType: { input: boolean; output: boolean };
-  CustomData: { input: Record<string, unknown>; output: Record<string, unknown> };
-  DateTime: { input: string; output: string };
-  FloatType: { input: number; output: number };
-  IntType: { input: number; output: number };
-  ItemId: { input: string; output: string };
-  MetaTagAttributes: { input: Record<string, string>; output: Record<string, string> };
-  UploadId: { input: string; output: string };
+  ID: { input: string; output: string; }
+  String: { input: string; output: string; }
+  Boolean: { input: boolean; output: boolean; }
+  Int: { input: number; output: number; }
+  Float: { input: number; output: number; }
+  BooleanType: { input: boolean; output: boolean; }
+  CustomData: { input: Record<string, unknown>; output: Record<string, unknown>; }
+  DateTime: { input: string; output: string; }
+  FloatType: { input: number; output: number; }
+  IntType: { input: number; output: number; }
+  ItemId: { input: string; output: string; }
+  MetaTagAttributes: { input: Record<string, string>; output: Record<string, string>; }
+  UploadId: { input: string; output: string; }
 };
 
 /** Specifies how to filter Boolean fields */
@@ -47,7 +46,7 @@ export enum ColorBucketType {
   Purple = 'purple',
   Red = 'red',
   White = 'white',
-  Yellow = 'yellow',
+  Yellow = 'yellow'
 }
 
 export type ColorField = {
@@ -101,7 +100,7 @@ export enum ComponentCallToActionModelOrderBy {
   LabelAsc = 'label_ASC',
   LabelDesc = 'label_DESC',
   UrlAsc = 'url_ASC',
-  UrlDesc = 'url_DESC',
+  UrlDesc = 'url_DESC'
 }
 
 /** Record of type Component: Call To Action (component_call_to_action) */
@@ -126,6 +125,7 @@ export type ComponentCallToActionRecord = RecordInterface & {
   url?: Maybe<Scalars['String']['output']>;
 };
 
+
 /** Record of type Component: Call To Action (component_call_to_action) */
 export type ComponentCallToActionRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
@@ -143,6 +143,7 @@ export type ComponentHeroModelFilter = {
   _unpublishingScheduledAt?: InputMaybe<PublishedAtFilter>;
   _updatedAt?: InputMaybe<UpdatedAtFilter>;
   description?: InputMaybe<TextFilter>;
+  featuredImage?: InputMaybe<FileFilter>;
   heading?: InputMaybe<StringFilter>;
   headingKicker?: InputMaybe<StringFilter>;
   id?: InputMaybe<ItemIdFilter>;
@@ -173,7 +174,7 @@ export enum ComponentHeroModelOrderBy {
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
+  InternalNameDesc = 'internalName_DESC'
 }
 
 /** Record of type Component: Hero (component_hero) */
@@ -193,16 +194,19 @@ export type ComponentHeroRecord = RecordInterface & {
   _unpublishingScheduledAt?: Maybe<Scalars['DateTime']['output']>;
   _updatedAt: Scalars['DateTime']['output'];
   description?: Maybe<Scalars['String']['output']>;
+  featuredImage?: Maybe<FileField>;
   heading?: Maybe<Scalars['String']['output']>;
   headingKicker?: Maybe<Scalars['String']['output']>;
   id: Scalars['ItemId']['output'];
   internalName?: Maybe<Scalars['String']['output']>;
 };
 
+
 /** Record of type Component: Hero (component_hero) */
 export type ComponentHeroRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** Record of type Component: Hero (component_hero) */
 export type ComponentHeroRecordDescriptionArgs = {
@@ -247,7 +251,7 @@ export enum ComponentNavItemModelOrderBy {
   LabelAsc = 'label_ASC',
   LabelDesc = 'label_DESC',
   UrlAsc = 'url_ASC',
-  UrlDesc = 'url_DESC',
+  UrlDesc = 'url_DESC'
 }
 
 /** Record of type Component: Nav Item (component_nav_item) */
@@ -270,6 +274,7 @@ export type ComponentNavItemRecord = RecordInterface & {
   label?: Maybe<Scalars['String']['output']>;
   url?: Maybe<Scalars['String']['output']>;
 };
+
 
 /** Record of type Component: Nav Item (component_nav_item) */
 export type ComponentNavItemRecord_SeoMetaTagsArgs = {
@@ -312,7 +317,7 @@ export enum ComponentNavModelOrderBy {
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
+  InternalNameDesc = 'internalName_DESC'
 }
 
 /** Record of type Component: Nav (component_nav) */
@@ -335,6 +340,7 @@ export type ComponentNavRecord = RecordInterface & {
   internalName?: Maybe<Scalars['String']['output']>;
   navItems: Array<ComponentNavItemRecord>;
 };
+
 
 /** Record of type Component: Nav (component_nav) */
 export type ComponentNavRecord_SeoMetaTagsArgs = {
@@ -381,7 +387,7 @@ export enum ComponentProjectSwitcherModelOrderBy {
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
+  InternalNameDesc = 'internalName_DESC'
 }
 
 /** Record of type Component: Project Switcher (component_project_switcher) */
@@ -407,10 +413,12 @@ export type ComponentProjectSwitcherRecord = RecordInterface & {
   projects: Array<TemplateProjectRecord>;
 };
 
+
 /** Record of type Component: Project Switcher (component_project_switcher) */
 export type ComponentProjectSwitcherRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** Record of type Component: Project Switcher (component_project_switcher) */
 export type ComponentProjectSwitcherRecordDescriptionArgs = {
@@ -455,7 +463,7 @@ export enum ComponentSingleInstanceModelOrderBy {
   InternalNameAsc = 'internalName_ASC',
   InternalNameDesc = 'internalName_DESC',
   SingleInstanceIdAsc = 'singleInstanceId_ASC',
-  SingleInstanceIdDesc = 'singleInstanceId_DESC',
+  SingleInstanceIdDesc = 'singleInstanceId_DESC'
 }
 
 /** Record of type Component: Single Instance (component_single_instance) */
@@ -478,6 +486,7 @@ export type ComponentSingleInstanceRecord = RecordInterface & {
   internalName?: Maybe<Scalars['String']['output']>;
   singleInstanceId?: Maybe<Scalars['String']['output']>;
 };
+
 
 /** Record of type Component: Single Instance (component_single_instance) */
 export type ComponentSingleInstanceRecord_SeoMetaTagsArgs = {
@@ -505,7 +514,7 @@ export type CreatedAtFilter = {
 export enum FaviconType {
   AppleTouchIcon = 'appleTouchIcon',
   Icon = 'icon',
-  MsApplication = 'msApplication',
+  MsApplication = 'msApplication'
 }
 
 export type FileField = FileFieldInterface & {
@@ -542,10 +551,12 @@ export type FileField = FileFieldInterface & {
   width?: Maybe<Scalars['IntType']['output']>;
 };
 
+
 export type FileFieldAltArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldBlurUpThumbArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -554,15 +565,18 @@ export type FileFieldBlurUpThumbArgs = {
   size?: Scalars['Int']['input'];
 };
 
+
 export type FileFieldCustomDataArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 export type FileFieldFocalPointArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldResponsiveImageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -571,10 +585,12 @@ export type FileFieldResponsiveImageArgs = {
   sizes?: InputMaybe<Scalars['String']['input']>;
 };
 
+
 export type FileFieldTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -613,10 +629,12 @@ export type FileFieldInterface = {
   width?: Maybe<Scalars['IntType']['output']>;
 };
 
+
 export type FileFieldInterfaceAltArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldInterfaceBlurUpThumbArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -625,15 +643,18 @@ export type FileFieldInterfaceBlurUpThumbArgs = {
   size?: Scalars['Int']['input'];
 };
 
+
 export type FileFieldInterfaceCustomDataArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 export type FileFieldInterfaceFocalPointArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldInterfaceResponsiveImageArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -642,10 +663,12 @@ export type FileFieldInterfaceResponsiveImageArgs = {
   sizes?: InputMaybe<Scalars['String']['input']>;
 };
 
+
 export type FileFieldInterfaceTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type FileFieldInterfaceUrlArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -2101,7 +2124,7 @@ export enum ImgixParamsAuto {
   Compress = 'compress',
   Enhance = 'enhance',
   Format = 'format',
-  Redeye = 'redeye',
+  Redeye = 'redeye'
 }
 
 export enum ImgixParamsBlendAlign {
@@ -2110,7 +2133,7 @@ export enum ImgixParamsBlendAlign {
   Left = 'left',
   Middle = 'middle',
   Right = 'right',
-  Top = 'top',
+  Top = 'top'
 }
 
 export enum ImgixParamsBlendCrop {
@@ -2118,7 +2141,7 @@ export enum ImgixParamsBlendCrop {
   Faces = 'faces',
   Left = 'left',
   Right = 'right',
-  Top = 'top',
+  Top = 'top'
 }
 
 export enum ImgixParamsBlendFit {
@@ -2126,7 +2149,7 @@ export enum ImgixParamsBlendFit {
   Clip = 'clip',
   Crop = 'crop',
   Max = 'max',
-  Scale = 'scale',
+  Scale = 'scale'
 }
 
 export enum ImgixParamsBlendMode {
@@ -2145,17 +2168,17 @@ export enum ImgixParamsBlendMode {
   Overlay = 'overlay',
   Saturation = 'saturation',
   Screen = 'screen',
-  Softlight = 'softlight',
+  Softlight = 'softlight'
 }
 
 export enum ImgixParamsBlendSize {
-  Inherit = 'inherit',
+  Inherit = 'inherit'
 }
 
 export enum ImgixParamsCh {
   Dpr = 'dpr',
   SaveData = 'saveData',
-  Width = 'width',
+  Width = 'width'
 }
 
 export enum ImgixParamsCrop {
@@ -2166,14 +2189,14 @@ export enum ImgixParamsCrop {
   Focalpoint = 'focalpoint',
   Left = 'left',
   Right = 'right',
-  Top = 'top',
+  Top = 'top'
 }
 
 export enum ImgixParamsCs {
   Adobergb1998 = 'adobergb1998',
   Srgb = 'srgb',
   Strip = 'strip',
-  Tinysrgb = 'tinysrgb',
+  Tinysrgb = 'tinysrgb'
 }
 
 export enum ImgixParamsFill {
@@ -2181,7 +2204,7 @@ export enum ImgixParamsFill {
   Gen = 'gen',
   Generative = 'generative',
   Gradient = 'gradient',
-  Solid = 'solid',
+  Solid = 'solid'
 }
 
 export enum ImgixParamsFillGenPos {
@@ -2190,7 +2213,7 @@ export enum ImgixParamsFillGenPos {
   Left = 'left',
   Middle = 'middle',
   Right = 'right',
-  Top = 'top',
+  Top = 'top'
 }
 
 export enum ImgixParamsFillGradientCs {
@@ -2198,19 +2221,19 @@ export enum ImgixParamsFillGradientCs {
   Lch = 'lch',
   Linear = 'linear',
   Oklab = 'oklab',
-  Srgb = 'srgb',
+  Srgb = 'srgb'
 }
 
 export enum ImgixParamsFillGradientLinearDirection {
   Bottom = 'bottom',
   Left = 'left',
   Right = 'right',
-  Top = 'top',
+  Top = 'top'
 }
 
 export enum ImgixParamsFillGradientType {
   Linear = 'linear',
-  Radial = 'radial',
+  Radial = 'radial'
 }
 
 export enum ImgixParamsFit {
@@ -2222,13 +2245,13 @@ export enum ImgixParamsFit {
   Fillmax = 'fillmax',
   Max = 'max',
   Min = 'min',
-  Scale = 'scale',
+  Scale = 'scale'
 }
 
 export enum ImgixParamsFlip {
   H = 'h',
   Hv = 'hv',
-  V = 'v',
+  V = 'v'
 }
 
 export enum ImgixParamsFm {
@@ -2245,12 +2268,12 @@ export enum ImgixParamsFm {
   Png8 = 'png8',
   Png32 = 'png32',
   Webm = 'webm',
-  Webp = 'webp',
+  Webp = 'webp'
 }
 
 export enum ImgixParamsIptc {
   Allow = 'allow',
-  Block = 'block',
+  Block = 'block'
 }
 
 export enum ImgixParamsMarkAlign {
@@ -2259,7 +2282,7 @@ export enum ImgixParamsMarkAlign {
   Left = 'left',
   Middle = 'middle',
   Right = 'right',
-  Top = 'top',
+  Top = 'top'
 }
 
 export enum ImgixParamsMarkFit {
@@ -2267,25 +2290,25 @@ export enum ImgixParamsMarkFit {
   Crop = 'crop',
   Fill = 'fill',
   Max = 'max',
-  Scale = 'scale',
+  Scale = 'scale'
 }
 
 export enum ImgixParamsMarkTile {
-  Grid = 'grid',
+  Grid = 'grid'
 }
 
 export enum ImgixParamsPalette {
   Css = 'css',
-  Json = 'json',
+  Json = 'json'
 }
 
 export enum ImgixParamsTransparency {
-  Grid = 'grid',
+  Grid = 'grid'
 }
 
 export enum ImgixParamsTrim {
   Auto = 'auto',
-  Color = 'color',
+  Color = 'color'
 }
 
 export enum ImgixParamsTxtAlign {
@@ -2294,18 +2317,18 @@ export enum ImgixParamsTxtAlign {
   Left = 'left',
   Middle = 'middle',
   Right = 'right',
-  Top = 'top',
+  Top = 'top'
 }
 
 export enum ImgixParamsTxtClip {
   Ellipsis = 'ellipsis',
   End = 'end',
   Middle = 'middle',
-  Start = 'start',
+  Start = 'start'
 }
 
 export enum ImgixParamsTxtFit {
-  Max = 'max',
+  Max = 'max'
 }
 
 /** Specifies how to filter by usage */
@@ -2329,7 +2352,7 @@ export type ItemIdFilter = {
 export enum ItemStatus {
   Draft = 'draft',
   Published = 'published',
-  Updated = 'updated',
+  Updated = 'updated'
 }
 
 /** Specifies how to filter Multiple-links fields */
@@ -2349,7 +2372,7 @@ export type LinksFilter = {
 export enum MuxThumbnailFormatType {
   Gif = 'gif',
   Jpg = 'jpg',
-  Png = 'png',
+  Png = 'png'
 }
 
 /** Specifies how to filter by image orientation */
@@ -2445,11 +2468,13 @@ export type Query = {
   upload?: Maybe<FileField>;
 };
 
+
 /** The query root for this schema */
 export type Query_AllComponentCallToActionsMetaArgs = {
   filter?: InputMaybe<ComponentCallToActionModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** The query root for this schema */
 export type Query_AllComponentHerosMetaArgs = {
@@ -2457,11 +2482,13 @@ export type Query_AllComponentHerosMetaArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 /** The query root for this schema */
 export type Query_AllComponentNavItemsMetaArgs = {
   filter?: InputMaybe<ComponentNavItemModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** The query root for this schema */
 export type Query_AllComponentNavsMetaArgs = {
@@ -2469,11 +2496,13 @@ export type Query_AllComponentNavsMetaArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 /** The query root for this schema */
 export type Query_AllComponentProjectSwitchersMetaArgs = {
   filter?: InputMaybe<ComponentProjectSwitcherModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** The query root for this schema */
 export type Query_AllComponentSingleInstancesMetaArgs = {
@@ -2481,11 +2510,13 @@ export type Query_AllComponentSingleInstancesMetaArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 /** The query root for this schema */
 export type Query_AllTaxonomyTagsMetaArgs = {
   filter?: InputMaybe<TaxonomyTagModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** The query root for this schema */
 export type Query_AllTemplatePagesMetaArgs = {
@@ -2493,11 +2524,13 @@ export type Query_AllTemplatePagesMetaArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 /** The query root for this schema */
 export type Query_AllTemplateProjectsMetaArgs = {
   filter?: InputMaybe<TemplateProjectModelFilter>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** The query root for this schema */
 export type Query_AllUploadsMetaArgs = {
@@ -2505,11 +2538,13 @@ export type Query_AllUploadsMetaArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
+
 /** The query root for this schema */
 export type Query_SiteArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** The query root for this schema */
 export type QueryAllComponentCallToActionsArgs = {
@@ -2521,6 +2556,7 @@ export type QueryAllComponentCallToActionsArgs = {
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
+
 /** The query root for this schema */
 export type QueryAllComponentHerosArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2530,6 +2566,7 @@ export type QueryAllComponentHerosArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<ComponentHeroModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
+
 
 /** The query root for this schema */
 export type QueryAllComponentNavItemsArgs = {
@@ -2541,6 +2578,7 @@ export type QueryAllComponentNavItemsArgs = {
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
+
 /** The query root for this schema */
 export type QueryAllComponentNavsArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2550,6 +2588,7 @@ export type QueryAllComponentNavsArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<ComponentNavModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
+
 
 /** The query root for this schema */
 export type QueryAllComponentProjectSwitchersArgs = {
@@ -2561,6 +2600,7 @@ export type QueryAllComponentProjectSwitchersArgs = {
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
+
 /** The query root for this schema */
 export type QueryAllComponentSingleInstancesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2570,6 +2610,7 @@ export type QueryAllComponentSingleInstancesArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<ComponentSingleInstanceModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
+
 
 /** The query root for this schema */
 export type QueryAllTaxonomyTagsArgs = {
@@ -2581,6 +2622,7 @@ export type QueryAllTaxonomyTagsArgs = {
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
+
 /** The query root for this schema */
 export type QueryAllTemplatePagesArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2590,6 +2632,7 @@ export type QueryAllTemplatePagesArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<TemplatePageModelOrderBy>>>;
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
+
 
 /** The query root for this schema */
 export type QueryAllTemplateProjectsArgs = {
@@ -2601,6 +2644,7 @@ export type QueryAllTemplateProjectsArgs = {
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
+
 /** The query root for this schema */
 export type QueryAllUploadsArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2611,6 +2655,7 @@ export type QueryAllUploadsArgs = {
   skip?: InputMaybe<Scalars['IntType']['input']>;
 };
 
+
 /** The query root for this schema */
 export type QueryComponentCallToActionArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2618,6 +2663,7 @@ export type QueryComponentCallToActionArgs = {
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<ComponentCallToActionModelOrderBy>>>;
 };
+
 
 /** The query root for this schema */
 export type QueryComponentHeroArgs = {
@@ -2627,6 +2673,7 @@ export type QueryComponentHeroArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<ComponentHeroModelOrderBy>>>;
 };
 
+
 /** The query root for this schema */
 export type QueryComponentNavArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2634,6 +2681,7 @@ export type QueryComponentNavArgs = {
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<ComponentNavModelOrderBy>>>;
 };
+
 
 /** The query root for this schema */
 export type QueryComponentNavItemArgs = {
@@ -2643,6 +2691,7 @@ export type QueryComponentNavItemArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<ComponentNavItemModelOrderBy>>>;
 };
 
+
 /** The query root for this schema */
 export type QueryComponentProjectSwitcherArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2650,6 +2699,7 @@ export type QueryComponentProjectSwitcherArgs = {
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<ComponentProjectSwitcherModelOrderBy>>>;
 };
+
 
 /** The query root for this schema */
 export type QueryComponentSingleInstanceArgs = {
@@ -2659,6 +2709,7 @@ export type QueryComponentSingleInstanceArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<ComponentSingleInstanceModelOrderBy>>>;
 };
 
+
 /** The query root for this schema */
 export type QueryTaxonomyTagArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2666,6 +2717,7 @@ export type QueryTaxonomyTagArgs = {
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<TaxonomyTagModelOrderBy>>>;
 };
+
 
 /** The query root for this schema */
 export type QueryTemplatePageArgs = {
@@ -2675,6 +2727,7 @@ export type QueryTemplatePageArgs = {
   orderBy?: InputMaybe<Array<InputMaybe<TemplatePageModelOrderBy>>>;
 };
 
+
 /** The query root for this schema */
 export type QueryTemplateProjectArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2682,6 +2735,7 @@ export type QueryTemplateProjectArgs = {
   locale?: InputMaybe<SiteLocale>;
   orderBy?: InputMaybe<Array<InputMaybe<TemplateProjectModelOrderBy>>>;
 };
+
 
 /** The query root for this schema */
 export type QueryUploadArgs = {
@@ -2708,6 +2762,7 @@ export type RecordInterface = {
   id: Scalars['ItemId']['output'];
 };
 
+
 export type RecordInterface_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
@@ -2728,7 +2783,7 @@ export enum ResolutionType {
   Icon = 'icon',
   Large = 'large',
   Medium = 'medium',
-  Small = 'small',
+  Small = 'small'
 }
 
 export type ResponsiveImage = {
@@ -2770,9 +2825,11 @@ export type Site = {
   noIndex?: Maybe<Scalars['BooleanType']['output']>;
 };
 
+
 export type SiteFaviconMetaTagsArgs = {
   variants?: InputMaybe<Array<InputMaybe<FaviconType>>>;
 };
+
 
 export type SiteGlobalSeoArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -2780,7 +2837,7 @@ export type SiteGlobalSeoArgs = {
 };
 
 export enum SiteLocale {
-  En = 'en',
+  En = 'en'
 }
 
 /** Specifies how to filter Slug fields */
@@ -2877,7 +2934,7 @@ export enum TaxonomyTagModelOrderBy {
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   TitleAsc = 'title_ASC',
-  TitleDesc = 'title_DESC',
+  TitleDesc = 'title_DESC'
 }
 
 /** Record of type Taxonomy: Tag (taxonomy_tag) */
@@ -2900,16 +2957,13 @@ export type TaxonomyTagRecord = RecordInterface & {
   title?: Maybe<Scalars['String']['output']>;
 };
 
+
 /** Record of type Taxonomy: Tag (taxonomy_tag) */
 export type TaxonomyTagRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
 
-export type TemplatePageModelComponentsField =
-  | ComponentHeroRecord
-  | ComponentNavRecord
-  | ComponentProjectSwitcherRecord
-  | ComponentSingleInstanceRecord;
+export type TemplatePageModelComponentsField = ComponentHeroRecord | ComponentNavRecord | ComponentProjectSwitcherRecord | ComponentSingleInstanceRecord;
 
 export type TemplatePageModelFilter = {
   AND?: InputMaybe<Array<InputMaybe<TemplatePageModelFilter>>>;
@@ -2949,7 +3003,7 @@ export enum TemplatePageModelOrderBy {
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   InternalNameAsc = 'internalName_ASC',
-  InternalNameDesc = 'internalName_DESC',
+  InternalNameDesc = 'internalName_DESC'
 }
 
 /** Record of type Template: Page (template_page) */
@@ -2974,6 +3028,7 @@ export type TemplatePageRecord = RecordInterface & {
   seo?: Maybe<SeoField>;
   slug?: Maybe<Scalars['String']['output']>;
 };
+
 
 /** Record of type Template: Page (template_page) */
 export type TemplatePageRecord_SeoMetaTagsArgs = {
@@ -3026,7 +3081,7 @@ export enum TemplateProjectModelOrderBy {
   InternalNameAsc = 'internalName_ASC',
   InternalNameDesc = 'internalName_DESC',
   ProjectUrlAsc = 'projectUrl_ASC',
-  ProjectUrlDesc = 'projectUrl_DESC',
+  ProjectUrlDesc = 'projectUrl_DESC'
 }
 
 /** Record of type Template: Project (template_project) */
@@ -3056,10 +3111,12 @@ export type TemplateProjectRecord = RecordInterface & {
   tags: Array<TaxonomyTagRecord>;
 };
 
+
 /** Record of type Template: Project (template_project) */
 export type TemplateProjectRecord_SeoMetaTagsArgs = {
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 /** Record of type Template: Project (template_project) */
 export type TemplateProjectRecordDescriptionArgs = {
@@ -3318,13 +3375,13 @@ export enum UploadOrderBy {
   ResolutionAsc = 'resolution_ASC',
   ResolutionDesc = 'resolution_DESC',
   SizeAsc = 'size_ASC',
-  SizeDesc = 'size_DESC',
+  SizeDesc = 'size_DESC'
 }
 
 export enum UploadOrientation {
   Landscape = 'landscape',
   Portrait = 'portrait',
-  Square = 'square',
+  Square = 'square'
 }
 
 /** Specifies how to filter by size */
@@ -3383,7 +3440,7 @@ export enum UploadType {
   Presentation = 'presentation',
   Richtext = 'richtext',
   Spreadsheet = 'spreadsheet',
-  Video = 'video',
+  Video = 'video'
 }
 
 /** Specifies how to filter by update datetime */
@@ -3420,10 +3477,12 @@ export type UploadVideoField = {
   width: Scalars['IntType']['output'];
 };
 
+
 export type UploadVideoFieldAltArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
   locale?: InputMaybe<SiteLocale>;
 };
+
 
 export type UploadVideoFieldBlurUpThumbArgs = {
   imgixParams?: InputMaybe<ImgixParams>;
@@ -3432,14 +3491,17 @@ export type UploadVideoFieldBlurUpThumbArgs = {
   size?: Scalars['Int']['input'];
 };
 
+
 export type UploadVideoFieldMp4UrlArgs = {
   exactRes?: InputMaybe<VideoMp4Res>;
   res?: InputMaybe<VideoMp4Res>;
 };
 
+
 export type UploadVideoFieldThumbnailUrlArgs = {
   format?: InputMaybe<MuxThumbnailFormatType>;
 };
+
 
 export type UploadVideoFieldTitleArgs = {
   fallbackLocales?: InputMaybe<Array<SiteLocale>>;
@@ -3465,7 +3527,7 @@ export type UploadWidthFilter = {
 export enum VideoMp4Res {
   High = 'high',
   Low = 'low',
-  Medium = 'medium',
+  Medium = 'medium'
 }
 
 export type FocalPoint = {
@@ -3474,143 +3536,18 @@ export type FocalPoint = {
   y: Scalars['FloatType']['output'];
 };
 
-export type AllTemplatePagesSlugsQueryVariables = Exact<{ [key: string]: never }>;
+export type AllTemplatePagesSlugsQueryVariables = Exact<{ [key: string]: never; }>;
 
-export type AllTemplatePagesSlugsQuery = {
-  __typename?: 'Query';
-  allTemplatePages: Array<{ __typename?: 'TemplatePageRecord'; internalName?: string | null; slug?: string | null }>;
-};
+
+export type AllTemplatePagesSlugsQuery = { __typename?: 'Query', allTemplatePages: Array<{ __typename?: 'TemplatePageRecord', internalName?: string | null, slug?: string | null }> };
 
 export type TemplatePageQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
-export type TemplatePageQuery = {
-  __typename?: 'Query';
-  templatePage?: {
-    __typename?: 'TemplatePageRecord';
-    id: string;
-    slug?: string | null;
-    components: Array<
-      | {
-          __typename?: 'ComponentHeroRecord';
-          _modelApiKey: string;
-          id: string;
-          headingKicker?: string | null;
-          heading?: string | null;
-          description?: string | null;
-        }
-      | { __typename?: 'ComponentNavRecord' }
-      | { __typename?: 'ComponentProjectSwitcherRecord' }
-      | { __typename?: 'ComponentSingleInstanceRecord' }
-    >;
-  } | null;
-};
 
-export const AllTemplatePagesSlugsDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'allTemplatePagesSlugs' },
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'allTemplatePages' },
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'internalName' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<AllTemplatePagesSlugsQuery, AllTemplatePagesSlugsQueryVariables>;
-export const TemplatePageDocument = {
-  kind: 'Document',
-  definitions: [
-    {
-      kind: 'OperationDefinition',
-      operation: 'query',
-      name: { kind: 'Name', value: 'templatePage' },
-      variableDefinitions: [
-        {
-          kind: 'VariableDefinition',
-          variable: { kind: 'Variable', name: { kind: 'Name', value: 'slug' } },
-          type: { kind: 'NonNullType', type: { kind: 'NamedType', name: { kind: 'Name', value: 'String' } } },
-        },
-      ],
-      selectionSet: {
-        kind: 'SelectionSet',
-        selections: [
-          {
-            kind: 'Field',
-            name: { kind: 'Name', value: 'templatePage' },
-            arguments: [
-              {
-                kind: 'Argument',
-                name: { kind: 'Name', value: 'filter' },
-                value: {
-                  kind: 'ObjectValue',
-                  fields: [
-                    {
-                      kind: 'ObjectField',
-                      name: { kind: 'Name', value: 'slug' },
-                      value: {
-                        kind: 'ObjectValue',
-                        fields: [
-                          {
-                            kind: 'ObjectField',
-                            name: { kind: 'Name', value: 'eq' },
-                            value: { kind: 'Variable', name: { kind: 'Name', value: 'slug' } },
-                          },
-                        ],
-                      },
-                    },
-                  ],
-                },
-              },
-            ],
-            selectionSet: {
-              kind: 'SelectionSet',
-              selections: [
-                { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                { kind: 'Field', name: { kind: 'Name', value: 'slug' } },
-                {
-                  kind: 'Field',
-                  name: { kind: 'Name', value: 'components' },
-                  selectionSet: {
-                    kind: 'SelectionSet',
-                    selections: [
-                      {
-                        kind: 'InlineFragment',
-                        typeCondition: { kind: 'NamedType', name: { kind: 'Name', value: 'ComponentHeroRecord' } },
-                        selectionSet: {
-                          kind: 'SelectionSet',
-                          selections: [
-                            { kind: 'Field', name: { kind: 'Name', value: '_modelApiKey' } },
-                            { kind: 'Field', name: { kind: 'Name', value: 'id' } },
-                            { kind: 'Field', name: { kind: 'Name', value: 'headingKicker' } },
-                            { kind: 'Field', name: { kind: 'Name', value: 'heading' } },
-                            { kind: 'Field', name: { kind: 'Name', value: 'description' } },
-                          ],
-                        },
-                      },
-                    ],
-                  },
-                },
-              ],
-            },
-          },
-        ],
-      },
-    },
-  ],
-} as unknown as DocumentNode<TemplatePageQuery, TemplatePageQueryVariables>;
+export type TemplatePageQuery = { __typename?: 'Query', templatePage?: { __typename?: 'TemplatePageRecord', id: string, slug?: string | null, components: Array<{ __typename?: 'ComponentHeroRecord', _modelApiKey: string, id: string, headingKicker?: string | null, heading?: string | null, description?: string | null, featuredImage?: { __typename?: 'FileField', alt?: string | null, url: string } | null } | { __typename?: 'ComponentNavRecord', _modelApiKey: string, navItems: Array<{ __typename?: 'ComponentNavItemRecord', id: string, label?: string | null, url?: string | null }> } | { __typename?: 'ComponentProjectSwitcherRecord' } | { __typename?: 'ComponentSingleInstanceRecord' }> } | null };
+
+
+export const AllTemplatePagesSlugsDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"allTemplatePagesSlugs"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"allTemplatePages"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"internalName"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}}]}}]}}]} as unknown as DocumentNode<AllTemplatePagesSlugsQuery, AllTemplatePagesSlugsQueryVariables>;
+export const TemplatePageDocument = {"kind":"Document","definitions":[{"kind":"OperationDefinition","operation":"query","name":{"kind":"Name","value":"templatePage"},"variableDefinitions":[{"kind":"VariableDefinition","variable":{"kind":"Variable","name":{"kind":"Name","value":"slug"}},"type":{"kind":"NonNullType","type":{"kind":"NamedType","name":{"kind":"Name","value":"String"}}}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"templatePage"},"arguments":[{"kind":"Argument","name":{"kind":"Name","value":"filter"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"slug"},"value":{"kind":"ObjectValue","fields":[{"kind":"ObjectField","name":{"kind":"Name","value":"eq"},"value":{"kind":"Variable","name":{"kind":"Name","value":"slug"}}}]}}]}}],"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"slug"}},{"kind":"Field","name":{"kind":"Name","value":"components"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentNavRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"navItems"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"label"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}},{"kind":"InlineFragment","typeCondition":{"kind":"NamedType","name":{"kind":"Name","value":"ComponentHeroRecord"}},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"_modelApiKey"}},{"kind":"Field","name":{"kind":"Name","value":"id"}},{"kind":"Field","name":{"kind":"Name","value":"headingKicker"}},{"kind":"Field","name":{"kind":"Name","value":"heading"}},{"kind":"Field","name":{"kind":"Name","value":"description"}},{"kind":"Field","name":{"kind":"Name","value":"featuredImage"},"selectionSet":{"kind":"SelectionSet","selections":[{"kind":"Field","name":{"kind":"Name","value":"alt"}},{"kind":"Field","name":{"kind":"Name","value":"url"}}]}}]}}]}}]}}]}}]} as unknown as DocumentNode<TemplatePageQuery, TemplatePageQueryVariables>;

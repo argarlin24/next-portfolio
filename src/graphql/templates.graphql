@@ -10,12 +10,24 @@ query templatePage($slug: String!) {
     id
     slug
     components {
+      ... on ComponentNavRecord {
+        _modelApiKey
+        navItems {
+          id
+          label
+          url
+        }
+      }
       ... on ComponentHeroRecord {
         _modelApiKey
         id
         headingKicker
         heading
         description
+        featuredImage {
+          alt
+          url
+        }
       }
     }
   }
