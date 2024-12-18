@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 import type { ComponentSingleInstanceRecord } from '@/graphql/generated';
 
-import ContactForm from '../ContactForm/ContactForm';
+import ContactForm from '../Socials/Socials';
 
 interface SingleInstanceProps {
   component: ComponentSingleInstanceRecord;
@@ -16,9 +16,7 @@ const SingleInstance: FC<SingleInstanceProps> = ({ component }) => {
     case 'contactForm':
       return <ContactForm />;
     default:
-      console.warn(
-        `${component?._modelApiKey} is incorrect or missing from componentGenerator`,
-      );
+      console.warn(`${component?._modelApiKey} is incorrect or missing from componentGenerator`);
       return null;
   }
 };
