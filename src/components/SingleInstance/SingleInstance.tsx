@@ -16,7 +16,9 @@ const SingleInstance: FC<SingleInstanceProps> = ({ component }) => {
     case 'contactForm':
       return <ContactForm />;
     default:
-      console.warn(`${component?._modelApiKey} is incorrect or missing from componentGenerator`);
+      console.warn(
+        `${component?._modelApiKey} is incorrect or missing from componentGenerator`,
+      );
       return null;
   }
 };
