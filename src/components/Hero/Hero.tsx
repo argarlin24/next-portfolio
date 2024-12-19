@@ -34,7 +34,7 @@ const Hero: FC<HeroProps> = ({ component }) => {
         </div>
         <div className="relative w-full bg-no-repeat bg-cover">
           <div className="h-auto w-full max-w-[600px] overflow-hidden rounded-lg relative z-20">
-            {featuredImage?.url && <img src={featuredImage?.url} alt=""/>}
+            {featuredImage?.url && <img src={featuredImage?.url} alt="" />}
           </div>
         </div>
       </div>

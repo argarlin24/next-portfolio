@@ -15,7 +15,7 @@ const Navigation: FC<NavigationProps> = ({ component }) => {
   return (
     <div className="absolute top-0 left-0 right-0">
       <Desktop navItems={navItems} />
-      <Mobile navItems={navItems} />
+      {/* <Mobile navItems={navItems} /> */}
     </div>
   );
 };
