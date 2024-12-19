@@ -17,7 +17,8 @@ interface PageProps {
 }
 
 export const generateStaticParams = async () => {
-  const data: AllTemplatePagesSlugsQuery = await request<AllTemplatePagesSlugsQuery>(AllTemplatePagesSlugsDocument);
+  const data: AllTemplatePagesSlugsQuery =
+    await request<AllTemplatePagesSlugsQuery>(AllTemplatePagesSlugsDocument);
 
   const paths = data.allTemplatePages.map(page => ({
     params: {
@@ -31,7 +32,10 @@ export const generateStaticParams = async () => {
 const Page: FC<PageProps> = async ({ params }) => {
   const slug = !params.slug ? 'homepage' : params.slug.join('/');
 
-  const pageData: TemplatePageQuery = await request<TemplatePageQuery>(TemplatePageDocument, { slug });
+  const pageData: TemplatePageQuery = await request<TemplatePageQuery>(
+    TemplatePageDocument,
+    { slug },
+  );
 
   if (pageData.templatePage?.slug === undefined) {
     notFound();

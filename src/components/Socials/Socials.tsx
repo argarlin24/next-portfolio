@@ -5,11 +5,18 @@ const Socials = () => {
     <div id="contact" className="bg-gradient-to-b from-slate-200">
       <div className="flex flex-col gap-8 px-10 py-12 mx-auto md:py-16 xl:max-w-screen-xl xl:py-24 xl:justify-center">
         <div className="flex flex-col gap-4">
-          <p className="text-xl font-semibold text-accent text-center">Thanks for checking out my work.</p>
-          <h2 className="text-6xl font-bold text-center">Let&apos;s Connect!</h2>
+          <p className="text-xl font-semibold text-accent text-center">
+            Thanks for checking out my work.
+          </p>
+          <h2 className="text-6xl font-bold text-center">
+            Let&apos;s Connect!
+          </h2>
         </div>
         <nav className="flex gap-4 justify-center">
-          <a className="h-[48px] w-[48px] self-center" href="https://github.com/argarlin24">
+          <a
+            className="h-[48px] w-[48px] self-center"
+            href="https://github.com/argarlin24"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16.52777099609375 15.667875289916992"
@@ -23,7 +30,10 @@ const Socials = () => {
               <path d="M8 0a8 8 0 0 0-8 8 8 8 0 0 0 5.47 7.59c.4.076.547-.171.547-.384 0-.19-.007-.693-.01-1.36-2.226.483-2.695-1.073-2.695-1.073-.364-.924-.89-1.17-.89-1.17-.725-.496.056-.486.056-.486.803.056 1.225.824 1.225.824.714 1.223 1.873.87 2.33.665.072-.517.278-.87.507-1.07-1.777-.2-3.644-.888-3.644-3.953 0-.873.31-1.587.823-2.147-.083-.202-.358-1.015.077-2.117 0 0 .672-.215 2.2.82A7.68 7.68 0 0 1 8 3.869c.68.004 1.364.092 2.003.27 1.527-1.035 2.198-.82 2.198-.82.437 1.102.163 1.915.08 2.117.513.56.823 1.274.823 2.147 0 3.073-1.87 3.75-3.653 3.947.287.246.543.735.543 1.48 0 1.07-.01 1.933-.01 2.195 0 .215.144.463.55.385A8 8 0 0 0 8 0" />
             </svg>
           </a>
-          <a className="h-[48px] w-[48px] self-center" href="https://www.linkedin.com/in/adam-garling/">
+          <a
+            className="h-[48px] w-[48px] self-center"
+            href="https://www.linkedin.com/in/adam-garling/"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 16 16"
