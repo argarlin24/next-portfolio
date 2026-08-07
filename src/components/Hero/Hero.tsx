@@ -1,22 +1,15 @@
-'use client';
-
-import dynamic from 'next/dynamic';
-import React from 'react';
 import type { FC } from 'react';
 
 import { ComponentHeroRecord } from '@/graphql/generated';
 
-const Threads = dynamic(() => import('@/components/Threads/Threads'), {
-  ssr: false,
-  loading: () => null,
-});
+import ThreadsBackground from './ThreadsBackground';
 
 interface HeroProps {
   component: ComponentHeroRecord;
 }
 
 const Hero: FC<HeroProps> = ({ component }) => {
-  const { heading, headingKicker, description, featuredImage } = component;
+  const { heading, headingKicker, description } = component;
 
   return (
     <div className="hero relative min-h-[80vh] overflow-hidden py-32">
@@ -44,13 +37,11 @@ const Hero: FC<HeroProps> = ({ component }) => {
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute -bottom-1/2 -top-1/2 -left-20 right-0 -rotate-6 origin-left w-[120%]">
-        <Threads
-          amplitude={1.5}
-          distance={0.3}
-          enableMouseInteraction={false}
-        />
-      </div>
+      <ThreadsBackground
+        amplitude={1.5}
+        distance={0.3}
+        enableMouseInteraction={false}
+      />
     </div>
   );
 };
