@@ -239,9 +239,18 @@ const Threads: React.FC<ThreadsProps> = ({
       );
       intersectionObserver.observe(container);
 
+      // Cap at 30fps to reduce main-thread work
+      const targetFps = 30;
+      const frameInterval = 1000 / targetFps;
+      let lastFrameTime = 0;
+
       function update(t: number) {
         animationFrameId.current = requestAnimationFrame(update);
         if (!isVisible || document.hidden) return;
+
+        // Skip frame if not enough time has passed
+        if (t - lastFrameTime < frameInterval) return;
+        lastFrameTime = t;
 
         const { color, amplitude, distance, enableMouseInteraction } =
           propsRef.current;
