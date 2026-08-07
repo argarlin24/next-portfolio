@@ -1,8 +1,16 @@
+'use client';
+
 import React from 'react';
 import type { FC } from 'react';
 
-import Threads from '@/components/Threads/Threads';
+import dynamic from 'next/dynamic';
+
 import { ComponentHeroRecord } from '@/graphql/generated';
+
+const Threads = dynamic(() => import('@/components/Threads/Threads'), {
+  ssr: false,
+  loading: () => null,
+});
 
 interface HeroProps {
   component: ComponentHeroRecord;
