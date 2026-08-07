@@ -2,8 +2,8 @@ import React from 'react';
 
 const Socials = () => {
   return (
-    <div id="contact" className="bg-gradient-to-b from-slate-200">
-      <div className="flex flex-col gap-8 px-10 py-12 mx-auto md:py-16 xl:max-w-screen-xl xl:py-24 xl:justify-center">
+    <div id="contact">
+      <div className="flex flex-col gap-8 px-10 pb-12 mx-auto md:pb-16 xl:max-w-screen-xl xl:pb-20 xl:justify-center">
         <div className="flex flex-col gap-4">
           <p className="text-xl font-semibold text-accent text-center">
             Thanks for checking out my work.

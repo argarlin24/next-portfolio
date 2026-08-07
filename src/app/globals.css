@@ -4,8 +4,10 @@
 
 
 
-html {
+html,
+body {
     scroll-behavior: smooth;
+    overflow-x: hidden;
   }
   
 /* Hide scrollbar for Webkit (Chrome, Safari) */
