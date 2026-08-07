@@ -12,7 +12,7 @@ const Hero: FC<HeroProps> = ({ component }) => {
   const { heading, headingKicker, description, featuredImage } = component;
 
   return (
-    <div className="hero relative min-h-[80vh] py-32">
+    <div className="hero relative min-h-[80vh] overflow-hidden py-32">
       <div className="pointer-events-none absolute inset-0 z-[5] bg-gradient-to-b from-base-100 via-base-100/80 to-transparent" />
       <div className="hero-content relative z-10 flex flex-col lg:flex-row p-10 gap-10 justify-center">
         <div className="max-w-xl gap-6 flex flex-col lg:max-w-3xl text-center drop-shadow-lg">

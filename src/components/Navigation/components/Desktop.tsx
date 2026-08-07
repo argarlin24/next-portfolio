@@ -17,7 +17,7 @@ const Desktop: FC<DesktopProps> = ({ navItems }) => (
         <ul className="menu menu-horizontal px-1">
           {navItems.map(item => (
             <li key={item?.label}>
-<a className="text-lg font-bold" href={item?.url || '#'}>
+              <a className="text-lg font-bold" href={item?.url || '#'}>
                 {item?.label}
               </a>
             </li>

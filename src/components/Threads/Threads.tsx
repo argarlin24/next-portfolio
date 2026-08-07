@@ -138,7 +138,12 @@ const Threads: React.FC<ThreadsProps> = ({
   const containerRef = useRef<HTMLDivElement>(null);
   const animationFrameId = useRef<number>(0);
 
-  const propsRef = useRef({ color, amplitude, distance, enableMouseInteraction });
+  const propsRef = useRef({
+    color,
+    amplitude,
+    distance,
+    enableMouseInteraction,
+  });
   propsRef.current = { color, amplitude, distance, enableMouseInteraction };
 
   useEffect(() => {
@@ -159,13 +164,17 @@ const Threads: React.FC<ThreadsProps> = ({
       uniforms: {
         iTime: { value: 0 },
         iResolution: {
-          value: new Color(gl.canvas.width, gl.canvas.height, gl.canvas.width / gl.canvas.height)
+          value: new Color(
+            gl.canvas.width,
+            gl.canvas.height,
+            gl.canvas.width / gl.canvas.height,
+          ),
         },
         uColor: { value: new Color(...propsRef.current.color) },
         uAmplitude: { value: propsRef.current.amplitude },
         uDistance: { value: propsRef.current.distance },
-        uMouse: { value: new Float32Array([0.5, 0.5]) }
-      }
+        uMouse: { value: new Float32Array([0.5, 0.5]) },
+      },
     });
 
     const mesh = new Mesh(gl, { geometry, program });
@@ -175,7 +184,10 @@ const Threads: React.FC<ThreadsProps> = ({
       const { clientWidth, clientHeight } = container;
       const baseDpr = Math.min(window.devicePixelRatio || 1, 2);
       const longestSide = Math.max(clientWidth, clientHeight) * baseDpr;
-      const dpr = longestSide > MAX_RENDER_DIM ? (baseDpr * MAX_RENDER_DIM) / longestSide : baseDpr;
+      const dpr =
+        longestSide > MAX_RENDER_DIM
+          ? (baseDpr * MAX_RENDER_DIM) / longestSide
+          : baseDpr;
       renderer.dpr = dpr;
       renderer.setSize(clientWidth, clientHeight);
       program.uniforms.iResolution.value.r = gl.canvas.width;
@@ -208,7 +220,7 @@ const Threads: React.FC<ThreadsProps> = ({
       entries => {
         isVisible = entries[0].isIntersecting;
       },
-      { threshold: 0 }
+      { threshold: 0 },
     );
     intersectionObserver.observe(container);
 
@@ -216,7 +228,8 @@ const Threads: React.FC<ThreadsProps> = ({
       animationFrameId.current = requestAnimationFrame(update);
       if (!isVisible || document.hidden) return;
 
-      const { color, amplitude, distance, enableMouseInteraction } = propsRef.current;
+      const { color, amplitude, distance, enableMouseInteraction } =
+        propsRef.current;
 
       program.uniforms.uColor.value.set(...color);
       program.uniforms.uAmplitude.value = amplitude;
@@ -239,7 +252,8 @@ const Threads: React.FC<ThreadsProps> = ({
     animationFrameId.current = requestAnimationFrame(update);
 
     return () => {
-      if (animationFrameId.current) cancelAnimationFrame(animationFrameId.current);
+      if (animationFrameId.current)
+        cancelAnimationFrame(animationFrameId.current);
       resizeObserver.disconnect();
       intersectionObserver.disconnect();
       window.removeEventListener('resize', resize);
@@ -250,7 +264,9 @@ const Threads: React.FC<ThreadsProps> = ({
     };
   }, []);
 
-  return <div ref={containerRef} className="relative h-full w-full" {...rest} />;
+  return (
+    <div ref={containerRef} className="relative h-full w-full" {...rest} />
+  );
 };
 
 export default Threads;
