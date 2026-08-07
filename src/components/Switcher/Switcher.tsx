@@ -62,9 +62,7 @@ const Switcher: FC<SwitcherProps> = ({ component }) => {
                           key={tag?.id ?? `tag-${tagIdx}`}
                           className="badge badge-outline badge-lg p-2"
                         >
-                          <p className="text-sm">
-                            {tag?.title}
-                          </p>
+                          <p className="text-sm">{tag?.title}</p>
                         </div>
                       ))}
                     </div>

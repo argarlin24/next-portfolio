@@ -7,7 +7,10 @@ const NotFound = () => {
       <div className="flex flex-col gap-2 items-center">
         <p className="text-6xl font-bold text-accent text-center">404</p>
         <h1 className="text-6xl font-bold">Are you lost?</h1>
-        <Link href="/" className="btn btn-accent rounded-3xl text-lg w-max mt-8">
+        <Link
+          href="/"
+          className="btn btn-accent rounded-3xl text-lg w-max mt-8"
+        >
           Take Me Home!
         </Link>
       </div>
