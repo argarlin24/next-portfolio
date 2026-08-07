@@ -37,11 +37,7 @@ const Hero: FC<HeroProps> = ({ component }) => {
           </div>
         </div>
       </div>
-      <ThreadsBackground
-        amplitude={1.5}
-        distance={0.3}
-        enableMouseInteraction={false}
-      />
+      <ThreadsBackground amplitude={1.5} distance={0.3} />
     </div>
   );
 };
