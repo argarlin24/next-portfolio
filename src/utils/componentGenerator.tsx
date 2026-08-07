@@ -9,21 +9,22 @@ const componentGenerator = (components: any[] | undefined) => {
   if (!components || components.length === 0) return null;
 
   return components?.map(component => {
+    const key = component.id || component._modelApiKey;
     switch (component._modelApiKey) {
       case 'component_nav':
-        return <Navigation key={component.id} component={component} />;
+        return <Navigation key={key} component={component} />;
       case 'component_hero':
-        return <Hero key={component.id} component={component} />;
+        return <Hero key={key} component={component} />;
       case 'component_switcher':
-        return <Switcher key={component?.id} component={component} />;
+        return <Switcher key={key} component={component} />;
       case 'component_single_instance':
-        return <SingleInstance key={component?.id} component={component} />;
+        return <SingleInstance key={key} component={component} />;
       default:
         console.warn(
-          `${component?.__modelApiKey} is incorrect or missing from componentGenerator`,
+          `${component?._modelApiKey} is incorrect or missing from componentGenerator`,
         );
 
-        return null;
+        return <React.Fragment key={key} />;
     }
   });
 };

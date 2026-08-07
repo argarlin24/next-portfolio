@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import type { FC } from 'react';
 
@@ -10,9 +11,9 @@ interface DesktopProps {
 const Desktop: FC<DesktopProps> = ({ navItems }) => (
   <div className="flex navbar bg-transparent">
     <div className="container mx-auto">
-      <a href="/" className="flex-1 text-lg font-bold">
+      <Link href="/" className="flex-1 text-lg font-bold">
         Adam Garling
-      </a>
+      </Link>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           {navItems.map(item => (

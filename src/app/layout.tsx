@@ -18,8 +18,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" data-theme="emerald">
-      <body className={manrope.className}>{children}</body>
-      <Footer />
+      <body className={manrope.className}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
