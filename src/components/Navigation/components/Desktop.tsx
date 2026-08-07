@@ -10,14 +10,14 @@ interface DesktopProps {
 const Desktop: FC<DesktopProps> = ({ navItems }) => (
   <div className="flex navbar bg-transparent">
     <div className="container mx-auto">
-      <a href="/" className="flex-1">
-        <img className="w-[50px]" src="/logo.svg" alt="Adam Garling" />
+      <a href="/" className="flex-1 text-lg font-bold">
+        Adam Garling
       </a>
       <div className="flex-none">
         <ul className="menu menu-horizontal px-1">
           {navItems.map(item => (
             <li key={item?.label}>
-              <a className="text-xl font-bold text-slate-900" href={item?.url || '#'}>
+<a className="text-lg font-bold" href={item?.url || '#'}>
                 {item?.label}
               </a>
             </li>

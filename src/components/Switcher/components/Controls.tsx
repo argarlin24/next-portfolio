@@ -19,7 +19,7 @@ const Controls: FC<ControlProps> = ({
       {projects?.map((project, idx) => (
         <button
           key={project?.id}
-          className={`btn btn-neutral btn-outline rounded-lg text-l min-w-max ${idx === activeSlide && 'active bg-gray-800 text-white'}`}
+          className={`btn btn-neutral btn-outline text-l min-w-max ${idx === activeSlide && 'active text-gray-800 bg-white'}`}
           onClick={() => setActiveSlide(idx)}
         >
           {project?.heading}
