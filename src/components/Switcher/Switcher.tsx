@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import type { FC } from 'react';
 
-import { Image as DatoCMSImage } from 'react-datocms';
-
 import type { ComponentSwitcherRecord } from '@/graphql/generated';
+import { Image as DatoCMSImage } from 'react-datocms';
 
 import Controls from './components/Controls';
 
