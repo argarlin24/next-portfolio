@@ -29,19 +29,19 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3.3.6",
+    "@tailwindcss/postcss": "^4.3.3",
     "@trivago/prettier-plugin-sort-imports": "^4.3.0",
     "@types/node": "^20",
     "@types/react": "^19.2.18",
     "@types/react-dom": "^19.2.4",
-    "daisyui": "^4.10.2",
+    "daisyui": "^5.7.16",
     "dotenv-cli": "^7.4.2",
     "eslint": "^9.39.5",
     "eslint-config-next": "16.3.0",
     "eslint-config-prettier": "^10.1.8",
     "husky": "^9.0.11",
-    "postcss": "^8",
     "prettier": "^3.2.5",
-    "tailwindcss": "^3.4.1",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5"
   }
 }

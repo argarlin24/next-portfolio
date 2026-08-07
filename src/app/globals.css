@@ -1,21 +1,20 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: business;
+}
 
 html,
 body {
-    scroll-behavior: smooth;
-    overflow-x: hidden;
-  }
-  
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 /* Hide scrollbar for Webkit (Chrome, Safari) */
 .no-scrollbar::-webkit-scrollbar {
-    display: none;
-  }
-  
-  /* Hide scrollbar for Firefox */
-  .no-scrollbar {
-    scrollbar-width: none; /* Firefox */
-  }
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.no-scrollbar {
+  scrollbar-width: none; /* Firefox */
+}
