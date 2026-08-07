@@ -32,7 +32,7 @@ const Hero: FC<HeroProps> = ({ component }) => {
             </h1>
           )}
           {description && (
-            <p
+            <div
               className="text-lg text-base-content lg:text-xl"
               dangerouslySetInnerHTML={{ __html: description }}
             />

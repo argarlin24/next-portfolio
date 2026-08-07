@@ -145,7 +145,10 @@ const Threads: React.FC<ThreadsProps> = ({
     distance,
     enableMouseInteraction,
   });
-  propsRef.current = { color, amplitude, distance, enableMouseInteraction };
+
+  useEffect(() => {
+    propsRef.current = { color, amplitude, distance, enableMouseInteraction };
+  }, [color, amplitude, distance, enableMouseInteraction]);
 
   useEffect(() => {
     if (!containerRef.current) return;

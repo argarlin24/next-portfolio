@@ -17,9 +17,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" data-theme="emerald">
-      <body className={manrope.className}>{children}</body>
-      <Footer />
+    <html lang="en" data-theme="business">
+      <body className={`${manrope.className} bg-base-100 text-base-content`}>
+        {children}
+        <Footer />
+      </body>
     </html>
   );
 }
