@@ -25,8 +25,18 @@ query templatePage($slug: String!) {
         heading
         description
         featuredImage {
-          alt
-          url
+          responsiveImage(imgixParams: { auto: format }) {
+            srcSet
+            webpSrcSet
+            sizes
+            src
+            width
+            height
+            aspectRatio
+            alt
+            title
+            base64
+          }
         }
       }
       ... on ComponentSwitcherRecord {
@@ -41,8 +51,18 @@ query templatePage($slug: String!) {
           description
           projectUrl
           featuredImage {
-            alt
-            url
+            responsiveImage(imgixParams: { auto: format }) {
+              srcSet
+              webpSrcSet
+              sizes
+              src
+              width
+              height
+              aspectRatio
+              alt
+              title
+              base64
+            }
           }
           tags {
             title

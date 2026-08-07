@@ -1,9 +1,10 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import type { FC } from 'react';
 
 import type { ComponentSwitcherRecord } from '@/graphql/generated';
+import { Image as DatoCMSImage } from 'react-datocms';
 
 import Controls from './components/Controls';
 
@@ -42,7 +43,7 @@ const Switcher: FC<SwitcherProps> = ({ component }) => {
                 className={`col-start-1 row-start-1 transition-opacity duration-500 ease-in-out ${activeSlide === idx ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
               >
                 <div className="flex flex-col-reverse gap-12 w-full p-10 lg:flex-row">
-                  <div className="flex flex-col gap-6">
+                  <div className="flex flex-col gap-6 lg:w-2/5 shrink-0">
                     {project?.heading && (
                       <p className="text-3xl font-bold text-white">
                         {project?.heading}
@@ -88,14 +89,16 @@ const Switcher: FC<SwitcherProps> = ({ component }) => {
                       </svg>
                     </a>
                   </div>
-                  {project?.featuredImage?.url && (
-                    <img
-                      className="w-full object-cover aspect-[16/9] self-start lg:max-w-[600px] xl:max-w-[800px] rounded-lg"
-                      src={project?.featuredImage?.url}
-                      alt={
-                        project?.featuredImage?.alt || project?.heading || ''
-                      }
-                    />
+                  {project?.featuredImage?.responsiveImage && (
+                    <div className="relative w-full aspect-video self-start lg:flex-1">
+                      <DatoCMSImage
+                        data={project.featuredImage.responsiveImage}
+                        layout="fill"
+                        objectFit="cover"
+                        className="rounded-lg"
+                        imgClassName="rounded-lg"
+                      />
+                    </div>
                   )}
                 </div>
               </div>
