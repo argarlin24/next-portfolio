@@ -20,7 +20,7 @@ const Hero: FC<HeroProps> = ({ component }) => {
             <p className="text-2xl font-semibold text-white">{headingKicker}</p>
           )}
           {heading && (
-            <h1 className="text-6xl font-medium lg:text-6xl text-white">
+            <h1 className="text-4xl font-medium lg:text-6xl text-white">
               {heading}
             </h1>
           )}
