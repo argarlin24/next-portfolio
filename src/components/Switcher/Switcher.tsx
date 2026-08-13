@@ -21,7 +21,7 @@ const Switcher: FC<SwitcherProps> = ({ component }) => {
       id="projects"
       className="flex py-12 mx-auto md:py-16 xl:max-w-screen-xl xl:py-20"
     >
-      <div className="flex flex-col gap-8 w-full mx-auto p-10">
+      <div className="flex flex-col gap-8 w-full mx-auto section-padding">
         <div className="flex flex-col gap-4 text-center">
           {heading && (
             <h2 className="text-5xl font-bold text-white">{heading}</h2>
@@ -42,7 +42,7 @@ const Switcher: FC<SwitcherProps> = ({ component }) => {
                 key={project?.id}
                 className={`col-start-1 row-start-1 transition-opacity duration-500 ease-in-out ${activeSlide === idx ? 'opacity-100' : 'opacity-0 pointer-events-none'}`}
               >
-                <div className="flex flex-col-reverse gap-12 w-full p-10 lg:flex-row">
+                <div className="flex flex-col-reverse gap-12 w-full lg:flex-row">
                   <div className="flex flex-col gap-6 lg:w-2/5 shrink-0">
                     {project?.heading && (
                       <p className="text-3xl font-bold text-white">

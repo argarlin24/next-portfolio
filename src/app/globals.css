@@ -5,6 +5,7 @@
 
 html,
 body {
+  scroll-behavior: smooth;
   overflow-x: hidden;
 }
 
@@ -16,4 +17,15 @@ body {
 /* Hide scrollbar for Firefox */
 .no-scrollbar {
   scrollbar-width: none; /* Firefox */
+}
+
+/* Responsive section padding */
+.section-padding {
+  padding: 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding: 2.5rem;
+  }
 }
