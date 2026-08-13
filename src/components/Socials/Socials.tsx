@@ -3,12 +3,12 @@ import React from 'react';
 const Socials = () => {
   return (
     <div id="contact">
-      <div className="flex flex-col gap-8 px-10 pb-12 mx-auto md:pb-16 xl:max-w-screen-xl xl:pb-20 xl:justify-center">
+      <div className="flex flex-col gap-8 px-10 mx-auto section-padding xl:max-w-screen-xl xl:pb-20 xl:justify-center">
         <div className="flex flex-col gap-4">
           <p className="text-xl font-semibold text-accent text-center">
             Thanks for checking out my work.
           </p>
-          <h2 className="text-6xl font-bold text-center">
+          <h2 className="text-6xl font-semibold text-center">
             Let&apos;s Connect!
           </h2>
         </div>
