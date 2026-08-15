@@ -8,7 +8,7 @@ const Socials = () => {
           <p className="text-xl font-semibold text-accent text-center">
             Thanks for checking out my work.
           </p>
-          <h2 className="text-6xl font-semibold text-center">
+          <h2 className="text-6xl font-semibold text-center text-white">
             Let&apos;s Connect!
           </h2>
         </div>
