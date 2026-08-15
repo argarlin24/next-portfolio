@@ -15,7 +15,7 @@ const Controls: FC<ControlProps> = ({
   setActiveSlide,
 }) => {
   return (
-    <div className="flex flex-row gap-4 overflow-x-scroll lg:justify-center no-scrollbar">
+    <div className="flex flex-row gap-4 overflow-x-auto no-scrollbar lg:mx-auto lg:w-fit">
       {projects?.map((project, idx) => (
         <button
           key={project?.id}
